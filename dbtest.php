@@ -1,5 +1,5 @@
 <?php
-$servername = "10.130.36.169";
+$servername = "mysql-zeusi.193b.starter-ca-central-1.openshiftapps.com";
 $username = "zeusi";
 $password = "zeusi";
 $dbname = "zeusi";
