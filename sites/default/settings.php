@@ -88,6 +88,17 @@
  */
  $databases = array();
 
+ $databases['zeusi']['default'] = array (
+   'database' => 'zeusi',
+   'username' => 'zeusi',
+   'password' => 'zeusi',
+   'prefix' => '',
+   'host' => 'mysql',
+   'port' => '3306',
+   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
+   'driver' => 'mysql',
+ );
+
 /**
  * Customizing database settings.
  *
