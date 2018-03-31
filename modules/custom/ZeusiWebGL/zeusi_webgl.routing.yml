@@ -1,0 +1,6 @@
+zeusi_webgl.test:
+  path: '/webgl/test'
+  defaults:
+    _controller: '\Drupal\zeusi_webgl\Controller\Test::content'
+  requirements:
+    _permission: 'access content'

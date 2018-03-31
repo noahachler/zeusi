@@ -1,0 +1,7 @@
+zeusi_webgl.test:
+  title: 'WEBGL'
+  description: 'Esempio WebGl'
+  parent: main
+  menu_name: main
+  route_name: zeusi_webgl.test
+  weight: 100

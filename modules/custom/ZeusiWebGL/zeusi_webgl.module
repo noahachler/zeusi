@@ -1,0 +1,19 @@
+<?php
+/**
+ * Implements hook_theme().
+ */
+function zeusi_webgl_theme() {
+  $templates = array(
+    'test'  => array('variables' => ['test_module' => 'TEST', 'test_class' => NULL],'template' => 'test')
+  );
+  return $templates;
+}
+
+// function zeusi_webgl_page_attachments(array &$page)
+// {
+//   if (! \Drupal::currentUser()->hasPermission('access contextual links')) {
+//     return;
+//   }
+
+//   $page['#attached']['library'][] = 'zeusi_webgl/zeusi_webgl.lib';
+// }
