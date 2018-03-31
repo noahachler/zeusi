@@ -1,0 +1,111 @@
+entity.processo.views:
+  path: '/processo/views'
+  defaults:
+    _title: 'List Processo'
+  requirements:
+    _permission: 'view processo entity'
+
+entity.processo.canonical:
+  path: '/processo/{processo}'
+  defaults:
+    _entity_view: 'processo'
+    _title: 'View Processo'
+  requirements:
+    _entity_access: 'processo.view'
+
+entity.processo.collection:
+  path: '/processo/list'
+  defaults:
+    _entity_list: 'processo'
+    _title: 'List Processo'
+  requirements:
+    _permission: 'view processo entity'
+
+processo.processo_add:
+  path: '/processo/add'
+  defaults:
+    _entity_form: processo.add
+    _title: 'Add Processo'
+  requirements:
+    _entity_create_access: 'processo'
+
+entity.processo.edit_form:
+  path: '/processo/{processo}/edit'
+  defaults:
+    _entity_form: processo.edit
+    _title: 'Edit Processo'
+  requirements:
+    _entity_access: 'processo.edit'
+
+entity.processo.delete_form:
+  path: '/processo/{processo}/delete'
+  defaults:
+    _entity_form: processo.delete
+    _title: 'Delete Processo'
+  requirements:
+    _entity_access: 'processo.delete'
+
+processo.processo_settings:
+  path: 'admin/structure/processo_settings'
+  defaults:
+    _form: '\Drupal\processo\Form\ProcessoSettingsForm'
+    _title: 'Processo settings'
+  requirements:
+    _permission: 'administer processo entity'
+    
+#-----------------------------------------    
+
+entity.intervento.views:
+  path: '/intervento/views'
+  defaults:
+    _title: 'List Intervento'
+  requirements:
+    _permission: 'view intervento entity'
+
+entity.intervento.canonical:
+  path: '/intervento/{intervento}'
+  defaults:
+    _entity_view: 'intervento'
+    _title: 'View Intervento'
+  requirements:
+    _entity_access: 'intervento.view'
+
+entity.intervento.collection:
+  path: '/intervento/list'
+  defaults:
+    _entity_list: 'intervento'
+    _title: 'List Intervento'
+  requirements:
+    _permission: 'view intervento entity'
+
+intervento.intervento_add:
+  path: '/intervento/add'
+  defaults:
+    _entity_form: intervento.add
+    _title: 'Add Intervento'
+  requirements:
+    _entity_create_access: 'intervento'
+
+entity.intervento.edit_form:
+  path: '/intervento/{intervento}/edit'
+  defaults:
+    _entity_form: intervento.edit
+    _title: 'Edit Intervento'
+  requirements:
+    _entity_access: 'intervento.edit'
+
+entity.intervento.delete_form:
+  path: '/intervento/{intervento}/delete'
+  defaults:
+    _entity_form: intervento.delete
+    _title: 'Delete Intervento'
+  requirements:
+    _entity_access: 'intervento.delete'
+
+intervento.intervento_settings:
+  path: 'admin/structure/intervento_settings'
+  defaults:
+    _form: '\Drupal\processo\Form\interventoSettingsForm'
+    _title: 'Intervento settings'
+  requirements:
+    _permission: 'administer intervento entity'

@@ -1,0 +1,9 @@
+name: Processo
+type: module
+description: Processo Api Entity
+package: Custom
+dependencies:
+  - drupal:options
+  - views_bootstrap
+version: 1.0
+core: 8.x

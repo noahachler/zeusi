@@ -1,0 +1,7 @@
+processo.lib:
+  version: 1.x
+  css:
+    layout:
+      css/style.css: {}
+    theme:
+      css/style.css: {}

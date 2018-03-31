@@ -1,0 +1,147 @@
+<?php
+
+/**
+ * @file
+ * Contains Drupal\processo\processo.module.
+ */
+
+/**
+ * @defgroup processo Example: Content Entity
+ * @ingroup examples
+ * @{
+ *
+ * @see Drupal\processo\Entity\Processo
+ * @see config_entity_processo }
+ */
+function processo_page_attachments(array &$page)
+{
+  if (! \Drupal::currentUser()->hasPermission('access contextual links')) {
+    return;
+  }
+
+  $page['#attached']['library'][] = 'processo/processo.lib';
+}
+
+function processo_views_data()
+{
+  $data = array();
+
+
+  $data['processo'] = array();
+  $data['processo']['table'] = array();
+  $data['processo']['table']['group'] = t('Processo table');
+  $data['processo']['table']['provider'] = 'processo_module';
+  $data['processo']['table']['base'] = array(
+    'database' => 'zeusi',
+    'field' => 'id',
+    'title' => t('Processo table'),
+    'help' => t(' table contains example content and can be related to nodes.'),
+    'weight' => - 10
+  );
+
+  $data['processo']['id'] = array(
+    'title' => t('ID'),
+    'help' => t('Chiave ID'),
+    'field' => array(
+      'id' => 'numeric'
+    ),
+    'sort' => array(
+      'id' => 'standard'
+    ),
+    'filter' => array(
+      'id' => 'numeric'
+    ),
+    'argument' => array(
+      'id' => 'numeric'
+    )
+  );
+
+  $data['processo']['title'] = array(
+    'title' => t('Titolo'),
+    'help' => t('Titolo.'),
+    'field' => array(
+      'id' => 'standard'
+    ),
+    'sort' => array(
+      'id' => 'standard'
+    ),
+    'filter' => array(
+      'id' => 'string'
+    ),
+    'argument' => array(
+      'id' => 'string'
+    )
+  );
+
+  $data['tipo_intervento'] = array();
+  $data['tipo_intervento']['table'] = array();
+  $data['tipo_intervento']['table']['group'] = t('Intervento table');
+  $data['tipo_intervento']['table']['provider'] = 'intervento_module';
+  $data['tipo_intervento']['table']['base'] = array(
+    'database' => 'zeusi',
+    'field' => 'id',
+    'title' => t('Intervento table'),
+    'help' => t(' table contains example content and can be related to nodes.'),
+    'weight' => - 10
+  );
+
+  $data['tipo_intervento']['table']['join'] = array(
+    'processo' => array(
+      'left_field' => 'id_tipo_intervento',
+      'field' => 'id'
+    )
+  );
+
+  $data['tipo_intervento']['id'] = array(
+    'title' => t('ID'),
+    'help' => t('Chiave ID'),
+    'field' => array(
+      'id' => 'numeric'
+    ),
+    'sort' => array(
+      'id' => 'standard'
+    ),
+    'filter' => array(
+      'id' => 'numeric'
+    ),
+    'argument' => array(
+      'id' => 'numeric'
+    )
+  );
+
+  $data['tipo_intervento']['nome'] = array(
+    'title' => t('Titolo'),
+    'help' => t('Titolo.'),
+    'field' => array(
+      'id' => 'standard'
+    ),
+    'sort' => array(
+      'id' => 'standard'
+    ),
+    'filter' => array(
+      'id' => 'string'
+    ),
+    'argument' => array(
+      'id' => 'string'
+    )
+  );
+
+  $data['tipo_intervento']['descrizione'] = array(
+    'title' => t('Descrizione'),
+    'help' => t('Descrizione.'),
+    'field' => array(
+      'id' => 'standard'
+    ),
+    'sort' => array(
+      'id' => 'standard'
+    ),
+    'filter' => array(
+      'id' => 'string'
+    ),
+    'argument' => array(
+      'id' => 'string'
+    )
+  );
+
+  return $data;
+}

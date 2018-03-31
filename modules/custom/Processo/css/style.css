@@ -1,0 +1,13 @@
+.breadcrumb{
+	display:none !important;
+}
+  
+.view-header {
+	display:inline-block !important;
+	margin:5px !important;
+}
+
+.view-filters {
+	display:inline-block !important;
+	margin:5px !important;
+}
