@@ -11,3 +11,7 @@
 	display:inline-block !important;
 	margin:5px !important;
 }
+
+.twitter-typeahead {
+	display: inline !important;
+}

@@ -5,3 +5,8 @@ processo.lib:
       css/style.css: {}
     theme:
       css/style.css: {}
+  js:
+    js/typeahead.js: {}
+    js/script.js: {}
+    dependencies:
+      - core/jquery

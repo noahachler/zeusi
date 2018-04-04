@@ -100,7 +100,7 @@ class Processo extends ContentEntityBase implements ProcessoInterface
       ->setDescription(t('The UUID of the Processo entity.'))
       ->setReadOnly(TRUE);
 
-    $fields['title'] = BaseFieldDefinition::create('string')->setLabel(t('Titolo'))
+    $fields['title'] = BaseFieldDefinition::create('string')->setLabel('Nome')
       ->setDescription(t('Il titolo del Processo.'))
    	  ->setRequired(TRUE)
       ->setSettings([
@@ -137,7 +137,25 @@ class Processo extends ContentEntityBase implements ProcessoInterface
     ->setDisplayConfigurable('form', TRUE)
     ->setDisplayConfigurable('view', TRUE);
 
-
+    $fields['patient'] = BaseFieldDefinition::create('string')->setLabel('Paziente')
+    ->setDescription(t('Il paziente del Processo.'))
+    ->setRequired(TRUE)
+    ->setSettings([
+      'max_length' => 255,
+      'text_processing' => 0
+    ])
+    ->setDefaultValue(NULL)
+    ->setDisplayOptions('view', [
+      'label' => 'above',
+      'type' => 'string',
+      'weight' => - 4
+    ])
+    ->setDisplayOptions('form', [
+      'type' => 'string_textfield',
+      'weight' => - 4
+    ])
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayConfigurable('view', TRUE);
 
       $fields['created'] = BaseFieldDefinition::create('created')
       ->setLabel(t('Created'))

@@ -145,3 +145,9 @@ function processo_views_data()
 
   return $data;
 }
+
+function processo_form_alter(&$form, $form_state, $form_id) {
+  if (strpos($form_id, 'processo') !== false) {
+    $form['patient'][widget][0]['value']['#attributes'] = array('class' => array('autocomplete-orthanc'), 'autocomplete' => array('off'));
+  }
+}
