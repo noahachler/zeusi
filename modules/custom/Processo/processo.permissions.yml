@@ -1,0 +1,5 @@
+# In processo.permissions.yml file.
+zeusi:
+  title: 'Zeusi'
+  description: 'A permission for all Processo pages.'
+  restrict access: TRUE

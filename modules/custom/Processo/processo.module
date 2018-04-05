@@ -15,7 +15,7 @@
  */
 function processo_page_attachments(array &$page)
 {
-  if (! \Drupal::currentUser()->hasPermission('access contextual links')) {
+  if (! \Drupal::currentUser()->hasPermission('zeusi')) {
     return;
   }
 
@@ -150,4 +150,13 @@ function processo_form_alter(&$form, $form_state, $form_id) {
   if (strpos($form_id, 'processo') !== false) {
     $form['patient'][widget][0]['value']['#attributes'] = array('class' => array('autocomplete-orthanc'), 'autocomplete' => array('off'));
   }
+}
+
+function processo_permission() {
+  return array(
+    'zeusi operator' => array(
+      'title' => t('Zeusi Operator'),
+      'description' => t('Operator zeusi.'),
+    )
+  );
 }

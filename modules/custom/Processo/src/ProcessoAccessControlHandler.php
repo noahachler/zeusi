@@ -12,18 +12,18 @@ class ProcessoAccessControlHandler extends EntityAccessControlHandler {
   protected function checkAccess(EntityInterface $entity, $operation, AccountInterface $account) {
     switch ($operation) {
       case 'view':
-        return AccessResult::allowedIfHasPermission($account, 'view processo entity');
+        return AccessResult::allowedIfHasPermission($account, 'zeusi');
 
       case 'edit':
-        return AccessResult::allowedIfHasPermission($account, 'edit processo entity');
+        return AccessResult::allowedIfHasPermission($account, 'zeusi');
 
       case 'delete':
-        return AccessResult::allowedIfHasPermission($account, 'delete processo entity');
+        return AccessResult::allowedIfHasPermission($account, 'zeusi');
     }
     return AccessResult::allowed();
   }
 
   protected function checkCreateAccess(AccountInterface $account, array $context, $entity_bundle = NULL) {
-    return AccessResult::allowedIfHasPermission($account, 'add processo entity');
+    return AccessResult::allowedIfHasPermission($account, 'zeusi');
   }
 }

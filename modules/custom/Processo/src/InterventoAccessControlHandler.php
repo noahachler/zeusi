@@ -12,18 +12,18 @@ class InterventoAccessControlHandler extends EntityAccessControlHandler {
   protected function checkAccess(EntityInterface $entity, $operation, AccountInterface $account) {
     switch ($operation) {
       case 'view':
-        return AccessResult::allowedIfHasPermission($account, 'view intervento entity');
+        return AccessResult::allowedIfHasPermission($account, 'zeusi');
 
       case 'edit':
-        return AccessResult::allowedIfHasPermission($account, 'edit intervento entity');
+        return AccessResult::allowedIfHasPermission($account, 'zeusi');
 
       case 'delete':
-        return AccessResult::allowedIfHasPermission($account, 'delete intervento entity');
+        return AccessResult::allowedIfHasPermission($account, 'zeusi');
     }
     return AccessResult::allowed();
   }
 
   protected function checkCreateAccess(AccountInterface $account, array $context, $entity_bundle = NULL) {
-    return AccessResult::allowedIfHasPermission($account, 'add intervento entity');
+    return AccessResult::allowedIfHasPermission($account, 'zeusi');
   }
 }

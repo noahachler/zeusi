@@ -4,7 +4,10 @@ dependencies:
   config:
     - system.menu.main
   module:
+    - user
     - views_bootstrap
+_core:
+  default_config_hash: vU4qhaT-BnSNmiOhS3KlDmSKtXaoQvGkVuTFj7R_05g
 id: intervento
 label: Intervento
 module: views
@@ -21,8 +24,9 @@ display:
     position: 0
     display_options:
       access:
-        type: none
-        options: {  }
+        type: perm
+        options:
+          perm: zeusi
       cache:
         type: none
         options: {  }
@@ -391,6 +395,7 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user.permissions
       tags: {  }
   page_1:
     display_plugin: page
@@ -415,4 +420,5 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - user.permissions
       tags: {  }

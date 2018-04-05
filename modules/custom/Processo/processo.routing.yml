@@ -1,10 +1,3 @@
-entity.processo.views:
-  path: '/processo/views'
-  defaults:
-    _title: 'List Processo'
-  requirements:
-    _permission: 'view processo entity'
-
 entity.processo.canonical:
   path: '/processo/{processo}'
   defaults:
@@ -12,6 +5,7 @@ entity.processo.canonical:
     _title: 'View Processo'
   requirements:
     _entity_access: 'processo.view'
+    _permission: 'zeusi'
 
 entity.processo.collection:
   path: '/processo/list'
@@ -19,7 +13,7 @@ entity.processo.collection:
     _entity_list: 'processo'
     _title: 'List Processo'
   requirements:
-    _permission: 'view processo entity'
+    _permission: 'zeusi'
 
 processo.processo_add:
   path: '/processo/add'
@@ -28,6 +22,7 @@ processo.processo_add:
     _title: 'Add Processo'
   requirements:
     _entity_create_access: 'processo'
+    _permission: 'zeusi'
 
 entity.processo.edit_form:
   path: '/processo/{processo}/edit'
@@ -36,6 +31,7 @@ entity.processo.edit_form:
     _title: 'Edit Processo'
   requirements:
     _entity_access: 'processo.edit'
+    _permission: 'zeusi'
 
 entity.processo.delete_form:
   path: '/processo/{processo}/delete'
@@ -44,6 +40,7 @@ entity.processo.delete_form:
     _title: 'Delete Processo'
   requirements:
     _entity_access: 'processo.delete'
+    _permission: 'zeusi'
 
 processo.processo_settings:
   path: 'admin/structure/processo_settings'
@@ -55,20 +52,13 @@ processo.processo_settings:
     
 #-----------------------------------------    
 
-entity.intervento.views:
-  path: '/intervento/views'
-  defaults:
-    _title: 'List Intervento'
-  requirements:
-    _permission: 'view intervento entity'
-
 entity.intervento.canonical:
   path: '/intervento/{intervento}'
   defaults:
     _entity_view: 'intervento'
     _title: 'View Intervento'
   requirements:
-    _entity_access: 'intervento.view'
+    _permission: 'zeusi'
 
 entity.intervento.collection:
   path: '/intervento/list'
@@ -76,7 +66,7 @@ entity.intervento.collection:
     _entity_list: 'intervento'
     _title: 'List Intervento'
   requirements:
-    _permission: 'view intervento entity'
+    _permission: 'zeusi'
 
 intervento.intervento_add:
   path: '/intervento/add'
@@ -85,6 +75,8 @@ intervento.intervento_add:
     _title: 'Add Intervento'
   requirements:
     _entity_create_access: 'intervento'
+    _permission: 'zeusi'
+    
 
 entity.intervento.edit_form:
   path: '/intervento/{intervento}/edit'
@@ -101,7 +93,8 @@ entity.intervento.delete_form:
     _title: 'Delete Intervento'
   requirements:
     _entity_access: 'intervento.delete'
-
+    _permission: 'zeusi'
+    
 intervento.intervento_settings:
   path: 'admin/structure/intervento_settings'
   defaults:
