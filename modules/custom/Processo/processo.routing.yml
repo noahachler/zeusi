@@ -1,3 +1,10 @@
+entity.processo.views:
+  path: '/processo/views'
+  defaults:
+    _title: 'List Processo'
+  requirements:
+    _permission: 'zeusi'
+
 entity.processo.canonical:
   path: '/processo/{processo}'
   defaults:
@@ -51,6 +58,13 @@ processo.processo_settings:
     _permission: 'administer processo entity'
     
 #-----------------------------------------    
+
+entity.intervento.views:
+  path: '/intervento/views'
+  defaults:
+    _title: 'List Intervento'
+  requirements:
+    _permission: 'zeusi'
 
 entity.intervento.canonical:
   path: '/intervento/{intervento}'
